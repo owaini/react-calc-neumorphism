@@ -1,13 +1,67 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*, *::after, *::before {
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  background-color: #e0e0e0;
+
+}
+
+
+.calc-grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  grid-gap: 10px;
+  justify-content: center;
+}
+button {
+  border-radius: 30px;
+background: #e0e0e0;
+box-shadow:  9px 9px 17px #bebebe,
+             -9px -9px 17px #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 1.7rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+button:hover,
+button:focus {
+  background: #c9c8c8;
+  color: #fff;
+  box-shadow:  4px 4px 17px #bebebe,
+             -4px -4px 17px #ffffff;
+}
+.calc-output {
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: inset 9px 9px 17px #bebebe,
+            inset -9px -9px 17px #ffffff;
+}
+.span-two {
+  grid-column: span 2;
+}
+
+.calc-output {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
+  padding: 6px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.calc-output .calc-prev-operand {
+  color: rgba(0, 0, 0, 0.5);
+   font-size: 1.5rem;
+}
+
+.calc-output .calc-curr-operand {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 2.5rem;
 }
